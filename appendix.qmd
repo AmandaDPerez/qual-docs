@@ -1,0 +1,55 @@
+# Appendix {.unnumbered}
+
+This section includes a glossary of key terms, frequently asked questions (FAQs), and recommended readings and resources.
+
+## **Glossary of Key Terms**
+
+-   **Code**: A label or keyword assigned to a segment of data that summarizes the essence of that segment.
+
+-   **Coding**: The process of reviewing data and marking segments with codes.
+
+-   **Open Coding**: The initial phase of coding in qualitative research where data is categorized without preconceived theories or frameworks.
+
+-   **Axial Coding**: A phase of coding that involves organizing codes into categories based on their properties and dimensions, and identifying relationships between categories.
+
+-   **Selective Coding**: The process of identifying a core category and systematically relating it to other categories, validating those relationships, and filling in categories that need further refinement.
+
+-   **Grounded Theory**: A research methodology that involves the construction of theories through methodical gathering and analysis of data.
+
+-   **Memo-Writing**: The practice of writing reflective notes during the research process, documenting the researcher's thoughts, analyses, and insights.
+
+-   **Theoretical Saturation**: The point in data collection and analysis when no new information or themes are observed in the data.
+
+-   **Triangulation**: The use of multiple methods, data sources, researchers, or theories to cross-check and validate findings.
+
+## **Frequently Asked Questions (FAQs)**
+
+### **What is the difference between open coding and thematic analysis?**
+
+While both involve identifying patterns and themes within qualitative data, open coding is a specific step within grounded theory methodology focusing on identifying initial codes without predefined categories. Thematic analysis is a broader method for analyzing qualitative data, where themes are identified, analyzed, and reported across the dataset.
+
+### **Can open coding be used with quantitative data?**
+
+Open coding is primarily designed for qualitative data. However, qualitative insights can be derived from open-ended responses in quantitative surveys, where open coding can be applied.
+
+### **How many codes are too many in open coding?**
+
+There's no fixed number of codes that are considered too many, as it depends on the complexity of the data and the depth of analysis required. However, researchers should aim for a balance where codes are detailed enough to capture nuances but not so numerous that they become unwieldy.
+
+### **When should I stop coding?**
+
+Coding should continue until theoretical saturation is reached, meaning that no new information or themes emerge from continuing to code additional data.
+
+## **Recommended Readings and Resources**
+
+### **Books**
+
+-   **The Coding Manual for Qualitative Researchers** by Johnny Saldaña: Provides an extensive overview of coding strategies and techniques across a variety of qualitative research methods.
+
+-   **Qualitative Inquiry and Research Design: Choosing Among Five Approaches** by John W. Creswell and Cheryl N. Poth: Offers comprehensive insights into different qualitative research methodologies, including grounded theory.
+
+### **Online Resources**
+
+-   **SAGE Research Methods**: An online resource providing content on research methods, including articles, book chapters, and videos on coding and qualitative analysis.
+
+-   **QSR International**: Offers tutorials and webinars on NVivo software, which can be useful for researchers using software for qualitative data analysis.

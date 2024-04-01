@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Coding - 9&nbsp; Best Practices and Common Pitfalls</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch10.html" rel="next">
+<link href="./ch8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">**Best Practices and Common Pitfalls**</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Open Coding</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>Foundations of Qualitative Research</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>Introduction to Open Coding</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>Preparing for Open Coding</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><strong>The Process of Open Coding</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>Tools and Technologies in Open Coding</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>Advanced Techniques in Open Coding</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>Beyond Open Coding: Moving Toward Theory</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Case Studies and Examples</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Best Practices and Common Pitfalls</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Training Exercises and Resources</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#best-practices-in-open-coding" id="toc-best-practices-in-open-coding" class="nav-link active" data-scroll-target="#best-practices-in-open-coding"><span class="header-section-number">9.1</span> <strong>Best Practices in Open Coding</strong></a>
+  <ul class="collapse">
+  <li><a href="#begin-with-comprehensive-data-familiarization" id="toc-begin-with-comprehensive-data-familiarization" class="nav-link" data-scroll-target="#begin-with-comprehensive-data-familiarization"><span class="header-section-number">9.1.1</span> <strong>Begin with Comprehensive Data Familiarization</strong></a></li>
+  <li><a href="#maintain-a-flexible-coding-approach" id="toc-maintain-a-flexible-coding-approach" class="nav-link" data-scroll-target="#maintain-a-flexible-coding-approach"><span class="header-section-number">9.1.2</span> <strong>Maintain a Flexible Coding Approach</strong></a></li>
+  <li><a href="#develop-a-detailed-codebook" id="toc-develop-a-detailed-codebook" class="nav-link" data-scroll-target="#develop-a-detailed-codebook"><span class="header-section-number">9.1.3</span> <strong>Develop a Detailed Codebook</strong></a></li>
+  <li><a href="#use-memos-and-annotations" id="toc-use-memos-and-annotations" class="nav-link" data-scroll-target="#use-memos-and-annotations"><span class="header-section-number">9.1.4</span> <strong>Use Memos and Annotations</strong></a></li>
+  <li><a href="#engage-in-reflective-practice" id="toc-engage-in-reflective-practice" class="nav-link" data-scroll-target="#engage-in-reflective-practice"><span class="header-section-number">9.1.5</span> <strong>Engage in Reflective Practice</strong></a></li>
+  </ul></li>
+  <li><a href="#common-pitfalls-and-how-to-avoid-them" id="toc-common-pitfalls-and-how-to-avoid-them" class="nav-link" data-scroll-target="#common-pitfalls-and-how-to-avoid-them"><span class="header-section-number">9.2</span> <strong>Common Pitfalls and How to Avoid Them</strong></a>
+  <ul class="collapse">
+  <li><a href="#over-coding" id="toc-over-coding" class="nav-link" data-scroll-target="#over-coding"><span class="header-section-number">9.2.1</span> <strong>Over-Coding</strong></a></li>
+  <li><a href="#forcing-the-data-into-preconceived-codes" id="toc-forcing-the-data-into-preconceived-codes" class="nav-link" data-scroll-target="#forcing-the-data-into-preconceived-codes"><span class="header-section-number">9.2.2</span> <strong>Forcing the Data into Preconceived Codes</strong></a></li>
+  <li><a href="#losing-sight-of-the-research-objectives" id="toc-losing-sight-of-the-research-objectives" class="nav-link" data-scroll-target="#losing-sight-of-the-research-objectives"><span class="header-section-number">9.2.3</span> <strong>Losing Sight of the Research Objectives</strong></a></li>
+  <li><a href="#underestimating-the-time-required" id="toc-underestimating-the-time-required" class="nav-link" data-scroll-target="#underestimating-the-time-required"><span class="header-section-number">9.2.4</span> <strong>Underestimating the Time Required</strong></a></li>
+  <li><a href="#ignoring-negative-cases" id="toc-ignoring-negative-cases" class="nav-link" data-scroll-target="#ignoring-negative-cases"><span class="header-section-number">9.2.5</span> <strong>Ignoring Negative Cases</strong></a></li>
+  </ul></li>
+  <li><a href="#ensuring-analytical-rigor" id="toc-ensuring-analytical-rigor" class="nav-link" data-scroll-target="#ensuring-analytical-rigor"><span class="header-section-number">9.3</span> <strong>Ensuring Analytical Rigor</strong></a></li>
+  <li><a href="#embracing-technology-wisely" id="toc-embracing-technology-wisely" class="nav-link" data-scroll-target="#embracing-technology-wisely"><span class="header-section-number">9.4</span> <strong>Embracing Technology Wisely</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Best Practices and Common Pitfalls</strong></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Engaging in open coding and qualitative analysis is a nuanced process that requires careful consideration, reflection, and adaptation. This chapter addresses best practices to enhance the quality of your analysis and identifies common pitfalls to avoid, ensuring a rigorous and insightful qualitative research process.</p>
+<section id="best-practices-in-open-coding" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="best-practices-in-open-coding"><span class="header-section-number">9.1</span> <strong>Best Practices in Open Coding</strong></h2>
+<section id="begin-with-comprehensive-data-familiarization" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="begin-with-comprehensive-data-familiarization"><span class="header-section-number">9.1.1</span> <strong>Begin with Comprehensive Data Familiarization</strong></h3>
+<ul>
+<li>Spend significant time with your data before beginning the coding process. This deep familiarity will guide your coding and help uncover the nuances in the data.</li>
+</ul>
+</section>
+<section id="maintain-a-flexible-coding-approach" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="maintain-a-flexible-coding-approach"><span class="header-section-number">9.1.2</span> <strong>Maintain a Flexible Coding Approach</strong></h3>
+<ul>
+<li>Remain open to evolving your codes and categories as you progress through the data. Flexibility is key to accommodating the depth and breadth of qualitative data.</li>
+</ul>
+</section>
+<section id="develop-a-detailed-codebook" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="develop-a-detailed-codebook"><span class="header-section-number">9.1.3</span> <strong>Develop a Detailed Codebook</strong></h3>
+<ul>
+<li>A well-defined codebook is crucial for ensuring consistency, especially in team-based research. It should include code names, definitions, and examples.</li>
+</ul>
+</section>
+<section id="use-memos-and-annotations" class="level3" data-number="9.1.4">
+<h3 data-number="9.1.4" class="anchored" data-anchor-id="use-memos-and-annotations"><span class="header-section-number">9.1.4</span> <strong>Use Memos and Annotations</strong></h3>
+<ul>
+<li>Document your thoughts, hypotheses, and observations throughout the coding process. Memos can capture the evolution of your thinking and the analytical depth behind your codes and categories.</li>
+</ul>
+</section>
+<section id="engage-in-reflective-practice" class="level3" data-number="9.1.5">
+<h3 data-number="9.1.5" class="anchored" data-anchor-id="engage-in-reflective-practice"><span class="header-section-number">9.1.5</span> <strong>Engage in Reflective Practice</strong></h3>
+<ul>
+<li>Regularly reflect on your role as the researcher, your biases, and how these influence the coding process. Reflexivity enhances the integrity of your analysis.</li>
+</ul>
+</section>
+</section>
+<section id="common-pitfalls-and-how-to-avoid-them" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="common-pitfalls-and-how-to-avoid-them"><span class="header-section-number">9.2</span> <strong>Common Pitfalls and How to Avoid Them</strong></h2>
+<section id="over-coding" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="over-coding"><span class="header-section-number">9.2.1</span> <strong>Over-Coding</strong></h3>
+<ul>
+<li><p><strong>Pitfall</strong>: Creating too many codes that fragment the data excessively, making it challenging to synthesize findings.</p></li>
+<li><p><strong>Avoidance</strong>: Regularly review and consolidate codes, focusing on those that are most significant to your research questions and objectives.</p></li>
+</ul>
+</section>
+<section id="forcing-the-data-into-preconceived-codes" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="forcing-the-data-into-preconceived-codes"><span class="header-section-number">9.2.2</span> <strong>Forcing the Data into Preconceived Codes</strong></h3>
+<ul>
+<li><p><strong>Pitfall</strong>: Imposing a pre-existing framework or codes on the data, which can obscure genuine insights.</p></li>
+<li><p><strong>Avoidance</strong>: Allow codes to emerge organically from the data, using pre-existing frameworks as a loose guide rather than a strict template.</p></li>
+</ul>
+</section>
+<section id="losing-sight-of-the-research-objectives" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="losing-sight-of-the-research-objectives"><span class="header-section-number">9.2.3</span> <strong>Losing Sight of the Research Objectives</strong></h3>
+<ul>
+<li><p><strong>Pitfall</strong>: Becoming so engrossed in the coding process that the initial research objectives become secondary.</p></li>
+<li><p><strong>Avoidance</strong>: Regularly revisit your research questions and objectives to ensure that your coding strategy aligns with them.</p></li>
+</ul>
+</section>
+<section id="underestimating-the-time-required" class="level3" data-number="9.2.4">
+<h3 data-number="9.2.4" class="anchored" data-anchor-id="underestimating-the-time-required"><span class="header-section-number">9.2.4</span> <strong>Underestimating the Time Required</strong></h3>
+<ul>
+<li><p><strong>Pitfall</strong>: Underestimating the amount of time needed for thorough open coding and analysis, leading to rushed or superficial findings.</p></li>
+<li><p><strong>Avoidance</strong>: Plan for ample time to immerse yourself in the data and the coding process, acknowledging that qualitative analysis cannot be rushed.</p></li>
+</ul>
+</section>
+<section id="ignoring-negative-cases" class="level3" data-number="9.2.5">
+<h3 data-number="9.2.5" class="anchored" data-anchor-id="ignoring-negative-cases"><span class="header-section-number">9.2.5</span> <strong>Ignoring Negative Cases</strong></h3>
+<ul>
+<li><p><strong>Pitfall</strong>: Overlooking or dismissing data that does not fit with emerging patterns or theories.</p></li>
+<li><p><strong>Avoidance</strong>: Actively seek out and consider disconfirming evidence or negative cases, as these can provide valuable insights and strengthen your analysis.</p></li>
+</ul>
+</section>
+</section>
+<section id="ensuring-analytical-rigor" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="ensuring-analytical-rigor"><span class="header-section-number">9.3</span> <strong>Ensuring Analytical Rigor</strong></h2>
+<ul>
+<li><p>Apply constant comparative methods to compare codes and categories within and across data sets, enhancing analytical depth.</p></li>
+<li><p>Engage in peer debriefing and triangulation to challenge and refine your analysis, contributing to its credibility.</p></li>
+</ul>
+</section>
+<section id="embracing-technology-wisely" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="embracing-technology-wisely"><span class="header-section-number">9.4</span> <strong>Embracing Technology Wisely</strong></h2>
+<ul>
+<li>While qualitative data analysis software can be incredibly helpful, remember that it is a tool to aid, not replace, the analytical process. Choose software that matches your project’s needs and enhances your analytical workflow.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch8.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>Case Studies and Examples</strong></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch10.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>Training Exercises and Resources</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

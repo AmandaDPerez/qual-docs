@@ -1,0 +1,25 @@
+# Preface {.unnumbered}
+
+Welcome to this journey into the heart of qualitative research, specifically through the lens of open coding. This guide is designed as a comprehensive training resource for research assistants and anyone interested in the art and science of qualitative analysis. The objective is simple: to equip you with the knowledge, skills, and confidence to engage in open coding, a foundational process in qualitative research that allows for a nuanced and in-depth understanding of data.
+
+## **Why Open Coding?**
+
+In the realm of qualitative research, data comes in rich narratives, intricate observations, and complex expressions of human experiences. Open coding stands as the first step in making sense of this complexity, offering a way to dissect and categorize data into meaningful themes, concepts, and categories without the constraints of pre-existing theories. It\'s a process that promotes discovery, fosters creativity, and lays the groundwork for generating new theories grounded in empirical evidence.
+
+## **What to Expect**
+
+This guide unfolds across several chapters, each tailored to guide you through different facets of open coding and qualitative research. Starting with the basics, we delve into the principles of qualitative research, introduce you to open coding, and gradually lead you through more advanced techniques and tools.
+
+### **Objectives of the Guide**
+
+-   **Demystify Open Coding**: Break down the process into manageable steps, making it accessible and understandable.
+
+-   **Equip with Practical Skills**: Provide you with the tools and techniques necessary to conduct open coding effectively.
+
+-   **Enhance Understanding of Qualitative Research**: Situate open coding within the broader context of qualitative analysis, highlighting its significance.
+
+-   **Foster Critical Thinking**: Encourage you to think critically about data, coding decisions, and the development of categories and themes.
+
+-   **Promote Rigorous Analysis**: Offer guidelines for ensuring the reliability and validity of your coding process.
+
+Let's begin.

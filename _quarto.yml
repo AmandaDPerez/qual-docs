@@ -1,0 +1,31 @@
+project:
+  type: book
+
+book:
+  title: "Open Coding"
+  author: "ADPerez"
+  date: "3/31/2024"
+  chapters:
+    - index.qmd
+    - ch1.qmd
+    - ch2.qmd
+    - ch3.qmd
+    - ch4.qmd
+    - ch5.qmd
+    - ch6.qmd
+    - ch7.qmd
+    - ch8.qmd
+    - ch9.qmd
+    - ch10.qmd
+    - appendix.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: pulse
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
